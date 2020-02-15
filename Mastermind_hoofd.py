@@ -1,16 +1,21 @@
 import random
-from Raad_algoritme import alg
-
-alg()
+from Raad_algoritme import algoritme
 
 def menu():
     antwoord = []
-    print("welke spelmodus wil je spelen",'\n',"1: Speler raadt, computer geeft code",'\n',"2: Computer raadt, speler geeft code")
-    keuze = int(input('Keuze: '))
-    if keuze == 1:
-        computercode()
-    elif keuze == 2:
-        spelercode()
+    print("welke spelmodus wil je spelen",'\n',"1: Speler raadt, computer geeft code",'\n',"2: Computer raadt, speler geeft code",'\n',"3: Stop spel")
+    while True:
+        keuze = int(input('Keuze: '))
+        if keuze == 1:
+            computercode()
+        elif keuze == 2:
+            spelercode()
+        elif keuze == 3:
+            break
+        else:
+            print('Probeer opnieuw')
+
+
 
 def spelercode():
     antwoord = []
@@ -23,7 +28,7 @@ def spelercode():
                 getal = int(getal)
                 antwoord.append(getal)
             break
-    computerraad(antwoord)
+    algoritme(antwoord)
 
 def computercode():
     antwoord = []
@@ -45,7 +50,5 @@ def spelerraad(antwoord):
 
 
 
-def computerraad(antwoord):
-    print(antwoord)
 
 menu()
