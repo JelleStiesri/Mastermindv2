@@ -17,7 +17,7 @@ def menu():
 
 
 
-def spelercode():
+def spelercode(): #FIXEN DAT GETALLEN ONDER 7 ZIJN
     antwoord = []
     while True:  # True todat user goede code geeft
         getallen = input("Geef een 4 cijferige code: ")

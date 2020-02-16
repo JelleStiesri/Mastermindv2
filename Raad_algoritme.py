@@ -70,6 +70,6 @@ def test():  #Test de gemiddelde snelheid
         totaal += tijd
     print('gem',totaal/keer)
 
-#test()
+test()
 
 #algoritme([1,1,1,1])
