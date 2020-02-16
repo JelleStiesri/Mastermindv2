@@ -25,7 +25,7 @@ def algoritme_uitvoering(antwoord,combi_lijst):
         #print("Nieuwe gok:",gok)
         nieuwe_feedback = feedback(gok,antwoord)
         if nieuwe_feedback == (4,0):
-            print('Gok {}: {} -- Feedback: {}'.format(tijd, gok, nieuwe_feedback))
+            #print('Gok {}: {} -- Feedback: {}'.format(tijd, gok, nieuwe_feedback))
             print('Aantal zetten', tijd, '---', 'Antwoord =', gok,'\n')
             return gok, tijd
         #print('Gok {}: {} -- Feedback: {}'.format(tijd, gok, nieuwe_feedback))
@@ -81,6 +81,6 @@ def test():  #Test de gemiddelde snelheid
     print('gem',totaal/keer)
     print('max:', max(maxi))
 
-test()
+#test()
 
 #algoritme([1,1,1,1])

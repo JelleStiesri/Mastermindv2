@@ -1,16 +1,19 @@
 import random
 from Raad_algoritme import algoritme
+from Raad_speler import spelerraad
 
 def menu():
     antwoord = []
-    print("welke spelmodus wil je spelen",'\n',"1: Speler raadt, computer geeft code",'\n',"2: Computer raadt, speler geeft code",'\n',"3: Stop spel")
     while True:
+        print("welke spelmodus wil je spelen", '\n', "1: Speler raadt, computer geeft code", '\n',
+              "2: Computer raadt, speler geeft code", '\n', "3: Stop spel")
         keuze = int(input('Keuze: '))
         if keuze == 1:
             computercode()
         elif keuze == 2:
             spelercode()
         elif keuze == 3:
+            print('Bedankt voor het spelen!')
             break
         else:
             print('Probeer opnieuw')
@@ -18,17 +21,22 @@ def menu():
 
 
 def spelercode(): #FIXEN DAT GETALLEN ONDER 7 ZIJN
-    antwoord = []
     while True:  # True todat user goede code geeft
+        antwoord = []
         getallen = input("Geef een 4 cijferige code: ")
+        print()
         if len(getallen) != 4:
             print('Probeer opnieuw')
+            continue
         else:
             for getal in getallen:
                 getal = int(getal)
                 antwoord.append(getal)
-            break
-    algoritme(antwoord)
+        if max(antwoord) > 6:
+            print('De getallen mogen niet groter zijn dan 6')
+            continue
+        algoritme(antwoord)
+        break
 
 def computercode():
     antwoord = []
@@ -37,18 +45,6 @@ def computercode():
         antwoord.append(los_getal)
     spelerraad(antwoord)
 
-def spelerraad(antwoord):
-    print(''.join(antwoord))
-    max_pogingen = 10 #max aantal pogingen
-    aantal_pogingen = 0 #aantal pogingen dat de speler heeft gedaan
-
-    for poging in range(max_pogingen):
-        #print(poging)
-        aantal_pogingen += 1
-        print(aantal_pogingen)
-
-
-
-
-
 menu()
+
+
