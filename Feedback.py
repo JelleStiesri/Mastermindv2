@@ -23,25 +23,4 @@ def wit_feedback(gok, antwoord):
             wit += 1
     return wit
 
-
-def gok():
-    gok = []
-    while True:  # True todat user goede code geeft
-        getallen = input("Gok: ")
-
-        if len(getallen) != 4:
-            print('Probeer opnieuw')
-        else:
-            for getal in getallen:
-                getal = int(getal)
-                gok.append(getal)
-            break
-    feedback(gok,[3, 7, 2, 3])
-    #feedback(gok, [3, 7, 2, 3])
-
-
-#print(feedback([1, 7, 3, 2], [3, 7, 2, 3]))
-
-
-#while True:
-#    gok()
+#print(feedback([1, 7, 3, 2], [3, 7, 2, 3])) #Om te testen

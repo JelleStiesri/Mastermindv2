@@ -18,7 +18,7 @@ def spelerraad(antwoord):
     elif aantal_pogingen == max_pogingen:
         print('Je hebt verloren!')
         print('Het antwoord was: ', *antwoord,sep='')
-        prin()
+        print()
 
 
 def gok_code(poging):
