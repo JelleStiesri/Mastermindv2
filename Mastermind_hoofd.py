@@ -5,8 +5,10 @@ from Raad_speler import spelerraad
 def menu():
     antwoord = []
     while True:
-        print("welke spelmodus wil je spelen", '\n', "1: Speler raadt, computer geeft code", '\n',
-              "2: Computer raadt, speler geeft code", '\n', "3: Stop spel")
+        print("welke spelmodus wil je spelen",
+              '\n', "1: Speler raadt, computer geeft code",
+              '\n',"2: Computer raadt, speler geeft code",
+              '\n', "3: Stop spel")
         keuze = int(input('Keuze: '))
         if keuze == 1:
             computercode()
@@ -18,8 +20,6 @@ def menu():
         else:
             print('Probeer opnieuw')
 
-
-
 def spelercode(): #FIXEN DAT GETALLEN ONDER 7 ZIJN
     while True:  # True todat user goede code geeft
         antwoord = []
@@ -29,19 +29,21 @@ def spelercode(): #FIXEN DAT GETALLEN ONDER 7 ZIJN
             print('Probeer opnieuw')
             continue
         else:
-            for getal in getallen:
+            for getal in getallen: #Zet alle getallen in een list
                 getal = int(getal)
                 antwoord.append(getal)
-        if max(antwoord) > 6:
+        if max(antwoord) > 6: #Checkt of de getallen niet groter zijn dan 6 (== 6 kleuren)
             print('De getallen mogen niet groter zijn dan 6')
             continue
         algoritme(antwoord)
         break
 
+    """Heuristiek erbij"""
+
 def computercode():
     antwoord = []
     for getal in range(4):
-        los_getal = random.randrange(1, 7)
+        los_getal = random.randrange(1, 7) #Genereert 4 getallen tussen de 1 en 6
         antwoord.append(los_getal)
     spelerraad(antwoord)
 

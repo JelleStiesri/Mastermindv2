@@ -4,7 +4,6 @@ def feedback(gok, antwoord):
     wit = wit - zwart
     return zwart, wit
 
-
 def zwart_feedback(gok, antwoord):
     index = 0
     zwart = 0

@@ -1,5 +1,10 @@
 from Feedback import feedback
 
+"""Bronnen:
+        https://github.com/nattydredd/Mastermind-Five-Guess-Algorithm (Alleen de Readme, geen stukken code)
+         YET ANOTHER MASTERMIND STRATEGY, Barteld Kooi, Universiteit van Groningen (algoritme 2.2)
+     """
+
 def beste_move(combi_lijst):
     dic = {}
     dic = dict((min(combi_lijst, combinatie), combinatie) for combinatie in combi_lijst) #maakt een dict met aantal eliminaties als key
@@ -17,7 +22,6 @@ def min(combi_lijst, gok): #minimale aantal geelimineerde combi's
             totaal_resultaten[nieuwe_feedback] += 1
     totaal = len(combi_lijst) - max(totaal_resultaten.values()) #returnt het aantal minimale aantal geelimineerde items van combilijst
     return totaal
-
 
 def aanroep_best(combi_lijst):
     return beste_move(combi_lijst)
