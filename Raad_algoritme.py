@@ -1,5 +1,6 @@
 from Feedback import feedback
 from generate import gen
+from beste_gok import aanroep_best
 import random
 
 
@@ -24,7 +25,7 @@ def algoritme_uitvoering(antwoord,combi_lijst):
     while len(combi_lijst) != 1:
         tijd += 1
         combi_lijst = vergelijken(combi_lijst, gok, nieuwe_feedback)
-        gok = random.choice(combi_lijst)
+        gok = aanroep_best(combi_lijst) #Voor algoritme 'beste gok'
         nieuwe_feedback = feedback(gok,antwoord)
         print('Gok {}: {} -- Feedback: {}'.format(tijd, gok, nieuwe_feedback))
         if nieuwe_feedback == (4,0):
@@ -50,7 +51,7 @@ def vergelijken(combi_lijst, gok, oude_feedback):
 
 
 def test():  #Test de gemiddelde snelheid
-    pogingen = 5000 # Verander deze om de gemiddelde snelheid te berekenen voor een bepaald aantal keer
+    pogingen = 1 # Verander deze om de gemiddelde snelheid te berekenen voor een bepaald aantal keer
     keer = 0
     totaal = 0
     maxi = []
