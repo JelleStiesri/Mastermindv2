@@ -11,17 +11,6 @@ def minimax(antwoord,lijst):
     #lijst = gen Na het testen word dit gebruikt
     tijd = 0
     time = 0
-    lst = []
-    for mogelijkheid in lijst: # is c
-        for item in vaste_lijst: # is g
-            lst.append(feedback(item,mogelijkheid))
-    print('lengte', len(lst))
-    print(lst)
-
-
-
-
-    print(lambda g: max(Counter(feedback(g, c) for c in lijst).values()))
 
     gok = [1,1,2,2] #Eerste gok
     nieuwe_feedback = 0
@@ -42,7 +31,7 @@ def minimax(antwoord,lijst):
         if len(lijst) == 1:
             gok = lijst[0]
         else:
-            gok = min(vaste_lijst, key = lambda g: max(Counter(feedback(g, c) for c in lijst).values()))
+            gok = min(vaste_lijst, key = lambda g: max(Counter(feedback(g, c) for c in lijst).values())) #"""BRON"""
 
 
     print('\n', 'Aantal zetten', tijd, '---', 'Antwoord =', gok, )
