@@ -56,7 +56,7 @@ def vergelijken(combi_lijst, gok, oude_feedback):
 
 
 def test():  #Test de gemiddelde snelheid
-    pogingen = 200  # Verander deze om de gemiddelde snelheid te berekenen voor een bepaald aantal keer
+    pogingen = 1000  # Verander deze om de gemiddelde snelheid te berekenen voor een bepaald aantal keer
     keer = 0
     totaal = 0
     maxi = []
