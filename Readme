@@ -1,0 +1,32 @@
+Mastermind opdracht Jelle Stiesri (V1B)
+
+Algoritmes:
+
+'Raad_algoritme':
+    Dit is het algoritme puur gemaakt op bestaande algoritmes. Ik gebruik het 'basis algoritme' uit de paper van de Universiteit van groningen
+    en het 'minimax' of het algoritme van 'Donald Knuth' dit is ongeveer het zelfde als algoritme 2.2 van de paper. alleen heb ik andere uitleg gebruikt
+
+'Heuristiek':
+    Mijn heurestiek bestaat uit een gedeelte 'Heurestiek_kleur' en een gedeelte dat de volgorde van de kleuren(cijfers) bepaald.
+    in die eerst functie worden stuk voor stuk kleuren gegokt en doorgeschoven als ze niet in het antwoord staan. A
+    ls ik in totaal 4 witte/zwarte feedback pinnetjes heb gebruik ik het principe uit het 'Raad_algoritme' (maar dan anders gebruikt) om de juiste combinatie te vinden.
+    Hiervoor maak ik een compleet nieuwe lijst die alleen maar bestaat uit combinaties waar je 100% een feedback van in totaal 4 pinnetjes terug krijgt.
+
+Ik heb geprobeerd om overal waar het nodig/handig is commentaar te zetten zodat iedereen de code kan snappen.
+
+Snelheden: (25000x getest voor gemiddelde)
+Basis       (Random eerste gok): 	4.640 zetten 	(Max: 7)
+Basis       (Eerste gok = 1122 ):  	4.611 zetten 	(max: 7)
+Minimax     (Random eerste gok) 	4.572 zetten 	(max: 6)
+Minimax     (Eerste gok = 1122 ): 	4.514 zetten 	(max: 6)
+Minimax     (Eerste gok = 1123 ): 	4.446 zetten 	(max: 6)
+Heuristiek		                    8.054 zetten 	(max: 12)
+
+
+
+
+Bronnen: (Waar ik veel aan heb gehad)
+        https://github.com/nattydredd/Mastermind-Five-Guess-Algorithm                       (Alleen de Readme, geen stukken code)
+        YET ANOTHER MASTERMIND STRATEGY, Barteld Kooi, Universiteit van Groningen           (algoritme 2.2 & 2.1)
+        https://www.python-course.eu/mastermind.php                                         (Puur voor algemene info & ideeën)
+        https://gist.github.com/wojteklu/73c6914cc446146b8b533c0988cf8d29                   (Voor het netjes maken van mijn programma)

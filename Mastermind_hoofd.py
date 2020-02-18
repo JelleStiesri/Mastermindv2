@@ -49,8 +49,6 @@ def spelercode(): #FIXEN DAT GETALLEN ONDER 7 ZIJN
             heuristiek(antwoord)
         break
 
-    """Heuristiek erbij"""
-
 def computercode():
     antwoord = []
     for getal in range(4):

@@ -1,5 +1,4 @@
 from Feedback import feedback
-from generate import gen
 """Functie/algoritme die de beste volgende stap berekend ('minimax' of het algoritme van 'Donald Knuth')
 
         Het heeft heel veel tijd gekost om dit goed te krijgen, de algoritmes worden er gemiddeld 0.1 zet sneller van dus daar lijkt hij het niet erg op te verbeteren.

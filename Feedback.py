@@ -16,7 +16,7 @@ def zwart_feedback(gok, antwoord):
     return zwart
 
 def wit_feedback(gok, antwoord):
-    lijst = antwoord[:] #De ':' neemt alle antwoorden over in een andere lijst,
+    lijst = antwoord[:] #De ':' neemt alle antwoorden over in een andere lijst
     wit = 0
     for item in gok:
         if item in lijst: #Dit voorkomt dat: feedback is 2,1 als je 3433 invult
