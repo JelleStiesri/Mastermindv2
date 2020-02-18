@@ -3,7 +3,7 @@ from Feedback import feedback
 
 def spelerraad(antwoord):
     print(antwoord) #Weghalen tijdens oplevering
-    max_pogingen = 8 #max aantal pogingen
+    max_pogingen = 8
     aantal_pogingen = 0 #aantal pogingen dat de speler heeft gedaan
     ans = False
     gok = 0

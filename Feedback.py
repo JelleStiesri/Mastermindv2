@@ -10,7 +10,7 @@ def zwart_feedback(gok, antwoord):
     index = 0
     zwart = 0
     for item in gok:
-        if item == antwoord[index]: # kijkt of gok en antwoord zelfde zijn
+        if item == antwoord[index]:
             zwart += 1
         index += 1
     return zwart
