@@ -15,7 +15,7 @@ import random
 def algoritme(antwoord):
     kleuren, nieuwe_feedback, tijd = kleur(antwoord)
     print(kleuren, nieuwe_feedback,tijd)
-    print(combinaties(kleuren,nieuwe_feedback))
+    combinaties(kleuren,nieuwe_feedback)
 
 
 def combinaties(gok, nieuwe_feedback):
