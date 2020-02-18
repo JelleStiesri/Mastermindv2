@@ -2,24 +2,21 @@ from Feedback import feedback
 from generate import gen
 import itertools
 from beste_gok import aanroep_best
+from Heuristiek_kleur import kleur
 import random
 """"
             INFO
-        Dit algoritme is gebaseert op de paper van de Uni van groningen.
-        Als basis heb ik het simpelste algoritme gebruikt. Ik heb deze uitgebreid -
-        - door een 2e algoritme toe te voegen (degene die de beste volgende gok kiest)
-        Het 2e algoritme komt van het principe 'minimax' of het algoritme van 'Donald Knuth'
+        
 """
 """Bronnen:
-        YET ANOTHER MASTERMIND STRATEGY, Barteld Kooi, Universiteit van Groningen (algoritme 2.1)
-        (Concept komt dan de paper, De code van mezelf)     
+
 """
-
-
 def algoritme(antwoord):
-    combi_lijst = gen() #Deze functie staat apart zodat het testen sneller kan gaan (Anders moet gen steeds opnieuw)
-    oplossing, tijd =algoritme_uitvoering(antwoord)
-    return oplossing, tijd
+    print(antwoord)
+    antwoord = [1,3,4,1]
+    back = kleur(antwoord)
+    print(back)
+
 
 def algoritme_uitvoering(antwoord):
     print('antwoord:', antwoord)
@@ -80,11 +77,17 @@ def combinaties(gok, nieuwe_feedback):
 
 
 
+def backk(gok, antwoord,tijd):
+    back = feedback(gok, antwoord)
+    print("{}e feedback:".format(tijd), back, gok)
+    return(back)
+
+#kleur([1,2,3,4])
 
 
 
-
-
+lst = gen()
+algoritme(random.choice(lst))
 
 
 
@@ -112,81 +115,11 @@ def test():  #Test de gemiddelde snelheid
     print('gem',totaal/keer)
     print('max:', max(maxi))
 
+
+
 #test()
-lst = gen()
-algoritme_uitvoering([3,2,3,4])
-
-
-
-
-
-
-
-
-
-"""from Feedback import feedback
-from generate import gen
-import random
-eerst = [2,3,4,1]
-
-def heuristiek(antwoord,lijst):
-    tijd = 0
-    gok = [1,1,1,1] #eerste gok
-    f1 = feedback(gok,antwoord)
-    zwart, wit = feedback(gok,antwoord)
-    tijd += 1
-    print("{}e feedback:".format(tijd),f1, gok)
-
-    if f1 == (4,0):
-        print('in 1 keer')
-        oplossing = gok
-        return oplossing, tijd
-
-    totaal1 = zwart+wit
-    aantal1 = zwart+wit
-    gok = []
-    for keer in range(totaal1):
-        gok.append(1)
-    tweetjes = 4 - totaal1
-    for keer in range(tweetjes):
-        gok.append(2)
-
-    f2 = feedback(gok,antwoord)
-    zwart, wit = feedback(gok, antwoord)
-    tijd += 1
-    print("{}e feedback:".format(tijd),f2, gok)
-
-    if f1 == (4,0):
-        print('in 1 keer')
-        oplossing = gok
-        return oplossing, tijd
-
-    totaal2 = zwart + wit
-    gok = []
-
-    for keer in range(aantal1):
-        gok.append(1)
-    aantal2 = totaal2 - totaal1
-    for keer in range(aantal2):
-        gok.append(2)
-
-    print(gok)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#lst = gen()
+#algoritme_uitvoering([3,2,3,4])
 
 
 
@@ -214,4 +147,4 @@ def test(eerst):  #Test de gemiddelde snelheid
     print('gem:',totaal/keer)
     print('max:', max(maxi))
 
-test(eerst)"""
+#test(eerst)

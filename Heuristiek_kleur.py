@@ -4,6 +4,7 @@ def kleur(antwoord):
     print('Antwoord:',antwoord)
     tijd = 0
     gok = [1,1,1,1] #eerste gok
+
     f1 = feedback(gok,antwoord)
     zwart, wit = feedback(gok,antwoord)
     tijd += 1
@@ -11,8 +12,7 @@ def kleur(antwoord):
 
     if f1 == (4,0):
         print('in 1 keer')
-        oplossing = gok
-        return oplossing, tijd
+        return gok, f1, tijd
 
     totaal_feedback1 = zwart + wit
     aantal1 = totaal_feedback1
@@ -32,7 +32,7 @@ def kleur(antwoord):
     aantal2 = totaal_feedback2-totaal_feedback1
 
     if totaal_feedback2 == 4:
-        return gok, tijd
+        return gok, feedback2, tijd
 
     # =============================
 
@@ -51,7 +51,7 @@ def kleur(antwoord):
     aantal3 = totaal_feedback3 - totaal_feedback2
 
     if totaal_feedback3 == 4:
-        return gok, tijd
+        return gok, feedback3, tijd
     # =============================
 
     gok4 = []
@@ -71,7 +71,7 @@ def kleur(antwoord):
     aantal4 = totaal_feedback4 - totaal_feedback3
 
     if totaal_feedback4 == 4:
-        return gok, tijd
+        return gok, feedback4, tijd
     # =============================
 
     gok5 = []
@@ -93,7 +93,7 @@ def kleur(antwoord):
     aantal5 = totaal_feedback5 - totaal_feedback4
 
     if totaal_feedback5 == 4:
-        return gok, tijd
+        return gok, feedback5, tijd
     # =============================
 
     gok6 = []
@@ -116,8 +116,8 @@ def kleur(antwoord):
     totaal_feedback6 = sum(feedback6)
     aantal6 = totaal_feedback6 - totaal_feedback5
 
-    if totaal_feedback2 == 4:
-        return gok, tijd
+    if totaal_feedback6 == 4:
+        return gok, feedback6, tijd
     else:
         return('ERROR')
 
@@ -125,3 +125,5 @@ def backk(gok, antwoord,tijd):
     back = feedback(gok, antwoord)
     print("{}e feedback:".format(tijd), back, gok)
     return(back)
+
+#kleur([1,2,3,4])
