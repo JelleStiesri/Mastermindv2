@@ -1,4 +1,6 @@
 from Feedback import feedback
+"""Functie die de speler de code laat gokken"""
+
 def spelerraad(antwoord):
     print(antwoord) #Weghalen tijdens oplevering
     max_pogingen = 8 #max aantal pogingen
@@ -19,7 +21,6 @@ def spelerraad(antwoord):
         print('Je hebt verloren!')
         print('Het antwoord was: ', *antwoord,sep='')
         print()
-
 
 def gok_code(poging):
     while True:  # True todat user 4 cijferige code geeft

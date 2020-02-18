@@ -1,5 +1,5 @@
 import random
-
+"""Deze functie maakt alle mogelijke combinaties"""
 def gen(): # Maakt een lijst met alle mogelijke combinaties van de cijfers 1/6 en met 4 tekens te gelijk
     lijst = []
     fout = 0

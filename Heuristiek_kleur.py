@@ -1,5 +1,7 @@
 from Feedback import feedback
 
+"""Deze functie zoekt welke kleuren er in de code staan """
+
 def kleur(antwoord):
     print('Antwoord:',antwoord)
     tijd = 0
@@ -32,6 +34,7 @@ def kleur(antwoord):
     aantal2 = totaal_feedback2-totaal_feedback1
 
     if totaal_feedback2 == 4:
+        gok = gok2
         return gok, feedback2, tijd
 
     # =============================
@@ -51,6 +54,7 @@ def kleur(antwoord):
     aantal3 = totaal_feedback3 - totaal_feedback2
 
     if totaal_feedback3 == 4:
+        gok = gok3
         return gok, feedback3, tijd
     # =============================
 
@@ -71,6 +75,7 @@ def kleur(antwoord):
     aantal4 = totaal_feedback4 - totaal_feedback3
 
     if totaal_feedback4 == 4:
+        gok = gok4
         return gok, feedback4, tijd
     # =============================
 
@@ -93,6 +98,7 @@ def kleur(antwoord):
     aantal5 = totaal_feedback5 - totaal_feedback4
 
     if totaal_feedback5 == 4:
+        gok = gok5
         return gok, feedback5, tijd
     # =============================
 
@@ -117,6 +123,7 @@ def kleur(antwoord):
     aantal6 = totaal_feedback6 - totaal_feedback5
 
     if totaal_feedback6 == 4:
+        gok = gok6
         return gok, feedback6, tijd
     else:
         return('ERROR')

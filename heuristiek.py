@@ -6,39 +6,17 @@ from Heuristiek_kleur import kleur
 import random
 """"
             INFO
-        
+        Zelf gemaatk algoritme (Totaal niet efficient natuurlik)
+        Het programma zoekt eerst alle kleuren die in de code zitten en probeert daarna achter de volgorde te komen
 """
 """Bronnen:
 
 """
 def algoritme(antwoord):
-    print(antwoord)
-    antwoord = [1,3,4,1]
-    back = kleur(antwoord)
-    print(back)
+    kleuren, nieuwe_feedback, tijd = kleur(antwoord)
+    print(kleuren, nieuwe_feedback,tijd)
+    print(combinaties(kleuren,nieuwe_feedback))
 
-
-def algoritme_uitvoering(antwoord):
-    print('antwoord:', antwoord)
-    tijd = 1
-    gok = [2,3,4,3] #random.choice(combi_lijst)  #Eerste gok
-    nieuwe_feedback = feedback(gok, antwoord) #Eerste feedback
-    zwart, wit = feedback(gok, antwoord)
-    if nieuwe_feedback == (4, 0):
-        print('Geraden in 1 zet! - Antwoord = ', gok, '\n')
-        return gok, tijd
-    print('Gok 1: {} -- Feedback: {}'.format(gok,nieuwe_feedback))
-    print("=================================================")
-
-
-    """Kleur raden"""
-    totaal = zwart + wit
-    #lijst met overige kleuren:
-    if totaal == 4:
-        print('Alle kleuren zijn geraden')
-        combinaties(gok, nieuwe_feedback)
-    else:
-        print('Foutjeee')
 
 def combinaties(gok, nieuwe_feedback):
     combis = []
@@ -49,7 +27,8 @@ def combinaties(gok, nieuwe_feedback):
             leeg.append(nummer)
         if leeg not in combis:
             combis.append(leeg)
-    #print(combis,'\n')
+
+    print(combis,'\n')
 
     if nieuwe_feedback == (0,4):
         combis2 = []
@@ -74,6 +53,7 @@ def combinaties(gok, nieuwe_feedback):
                 combis.remove(combinatie)
         print(combis)
         print(aanroep_best(combis))
+
 
 
 
@@ -148,3 +128,26 @@ def test(eerst):  #Test de gemiddelde snelheid
     print('max:', max(maxi))
 
 #test(eerst)
+
+
+"""def algoritme_uitvoering(antwoord):
+    print('antwoord:', antwoord)
+    tijd = 1
+    gok = [2,3,4,3] #random.choice(combi_lijst)  #Eerste gok
+    nieuwe_feedback = feedback(gok, antwoord) #Eerste feedback
+    zwart, wit = feedback(gok, antwoord)
+    if nieuwe_feedback == (4, 0):
+        print('Geraden in 1 zet! - Antwoord = ', gok, '\n')
+        return gok, tijd
+    print('Gok 1: {} -- Feedback: {}'.format(gok,nieuwe_feedback))
+    print("=================================================")
+
+
+    
+    totaal = zwart + wit
+    #lijst met overige kleuren:
+    if totaal == 4:
+        print('Alle kleuren zijn geraden')
+        combinaties(gok, nieuwe_feedback)
+    else:
+        print('Foutjeee')"""

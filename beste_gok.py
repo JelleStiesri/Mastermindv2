@@ -1,4 +1,5 @@
 from Feedback import feedback
+from generate import gen
 
 """Bronnen:
         https://github.com/nattydredd/Mastermind-Five-Guess-Algorithm (Alleen de Readme, geen stukken code)
@@ -20,7 +21,7 @@ def min(combi_lijst, gok): #minimale aantal geelimineerde combi's
             totaal_resultaten[nieuwe_feedback] = 1 #Als de feedback nog niet in de dict staat maakt hij een niew item aan in de dict
         else:
             totaal_resultaten[nieuwe_feedback] += 1
-    totaal = len(combi_lijst) - max(totaal_resultaten.values()) #returnt het aantal minimale aantal geelimineerde items van combilijst
+    totaal = len(combi_lijst) - max(totaal_resultaten.values()) #returnt het aantal minimale aantal geelimineerde items van combilijst\
     return totaal
 
 def aanroep_best(combi_lijst):

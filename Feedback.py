@@ -1,3 +1,5 @@
+"""Mijn feedback programma"""
+
 def feedback(gok, antwoord):
     zwart = zwart_feedback(gok,antwoord)
     wit = wit_feedback(gok, antwoord)
