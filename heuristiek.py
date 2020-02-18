@@ -1,9 +1,10 @@
 from Feedback import feedback
 from generate import gen
 import itertools
+import random
 from beste_gok import aanroep_best
 from Heuristiek_kleur import kleur
-import random
+
 """"
             INFO
         Zelf gemaatk algoritme (Totaal niet efficient natuurlik)
@@ -13,9 +14,34 @@ import random
 
 """
 def algoritme(antwoord):
-    kleuren, nieuwe_feedback, tijd = kleur(antwoord)
-    print(kleuren, nieuwe_feedback,tijd)
-    combinaties(kleuren,nieuwe_feedback)
+    kleuren, nieuwe_feedback, pogingen = kleur(antwoord)
+    print(kleuren, nieuwe_feedback,pogingen)
+    combi_lijst = combinaties(kleuren,nieuwe_feedback)
+
+    gok = aanroep_best(combi_lijst)
+    print(gok)
+
+    input('doorgaan')
+    while nieuwe_feedback != (4,0) and len(combi_lijst) != 1:
+        print('len',len(combi_lijst))
+        pogingen += 1
+        gok = random.choice(combi_lijst)
+        nieuwe_feedback = feedback(gok,antwoord)
+        print("{}e feedback:".format(pogingen), nieuwe_feedback, gok, len(combi_lijst))
+        combi_lijst = vergelijken(combi_lijst,kleuren,nieuwe_feedback)
+        input('doorgaan')
+    if nieuwe_feedback == (4,0):
+        print('JEEEEJ')
+
+
+def vergelijken(combi_lijst, gok, oude_feedback):
+    nieuwe_lijst = [] #Tijdelijk
+    for combinatie in combi_lijst:
+        nieuwe_feedback = feedback(combinatie, gok)
+        if nieuwe_feedback == oude_feedback:
+            nieuwe_lijst.append(combinatie)
+    combi_lijst = nieuwe_lijst
+    return combi_lijst
 
 
 def combinaties(gok, nieuwe_feedback):
@@ -25,11 +51,7 @@ def combinaties(gok, nieuwe_feedback):
         leeg = []
         for nummer in combinatie:
             leeg.append(nummer)
-        if leeg not in combis:
-            combis.append(leeg)
-
-    print(combis,'\n')
-
+        combis.append(leeg)
     if nieuwe_feedback == (0,4):
         combis2 = []
         for combinatie in combis: #Deze 4 zijn blijkbaar nodig om alles er uit te filteren
@@ -50,20 +72,19 @@ def combinaties(gok, nieuwe_feedback):
                 combis.remove(combinatie)
         for combinatie in combis: #Zonder deze word niet alles er uit gefiltert
             if combinatie[0] == gok[0] or combinatie[1] == gok[1] or combinatie[2] == gok[2] or combinatie[3] == gok[3]:
+                #print('hoi')
                 combis.remove(combinatie)
         print(combis)
-        print(aanroep_best(combis))
-
-
+        return combis
+    else:
+        print(combis)
+        return combis
 
 
 def backk(gok, antwoord,tijd):
     back = feedback(gok, antwoord)
     print("{}e feedback:".format(tijd), back, gok)
     return(back)
-
-#kleur([1,2,3,4])
-
 
 
 lst = gen()

@@ -1,6 +1,6 @@
 from Feedback import feedback
 
-"""Deze functie zoekt welke kleuren er in de code staan 
+"""Deze functie zoekt welke kleuren er in de code staan, Dit is onderdeel van het zelfbedachte heuristiek
 
     Hij begint met 1111, uit deze feedback kan je afleiden hoeveel 1en erin zitten, de rest vul je op met 2. 
     De hoeveelheid totale pinnetjes die erbij komen (ten opzichte van eerste feedback) staat gelijk aan het aantal 2en in de code. 
@@ -127,13 +127,13 @@ def kleur(antwoord):
     feedback6 = backk(gok6, antwoord, pogingen)
 
     totaal_feedback6 = sum(feedback6)
-    aantal6 = totaal_feedback6 - totaal_feedback5
 
     if totaal_feedback6 == 4:
         gok = gok6
         return gok, feedback6, pogingen
     else:
         return('ERROR')
+
 
 def backk(gok, antwoord,pogingen):
     back = feedback(gok, antwoord)

@@ -22,7 +22,7 @@ def algoritme(antwoord):
 
 def algoritme_uitvoering(antwoord,combi_lijst):
     tijd = 1
-    gok = [1,1,2,2] #random.choice(combi_lijst)  #Eerste gok
+    gok = [1,1,2,3]  #Eerste gok, bewezen de snelste
     nieuwe_feedback = feedback(gok, antwoord) #Eerste feedback
     if nieuwe_feedback == (4, 0):
         print('Geraden in 1 zet! - Antwoord = ', gok, '\n')
@@ -56,7 +56,7 @@ def vergelijken(combi_lijst, gok, oude_feedback):
 
 
 def test():  #Test de gemiddelde snelheid
-    pogingen = 500  # Verander deze om de gemiddelde snelheid te berekenen voor een bepaald aantal keer
+    pogingen = 1500  # Verander deze om de gemiddelde snelheid te berekenen voor een bepaald aantal keer
     keer = 0
     totaal = 0
     maxi = []
