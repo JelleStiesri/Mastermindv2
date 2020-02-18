@@ -23,7 +23,7 @@ def heuristiek(antwoord):
         return gok, pogingen
     print('Gok {}: {} -- Feedback: {}'.format(pogingen, gok, nieuwe_feedback))
 
-    while len(combi_lijst) != 1:
+    while pogingen != 10:
         pogingen += 1
         combi_lijst = vergelijken(combi_lijst,gok,nieuwe_feedback)
         gok = aanroep_best(combi_lijst)
@@ -33,9 +33,7 @@ def heuristiek(antwoord):
             print('Aantal zetten', pogingen, '---', 'Antwoord =', gok,'\n')
             return gok, pogingen
 
-    oplossing = combi_lijst[0]
-    print('Aantal zetten', pogingen, '---', 'Antwoord =', combi_lijst[0], '\n')
-    return oplossing, pogingen
+    print('De computer heeft verloren!','\n')
 
 def vergelijken(combi_lijst, gok, oude_feedback):
     nieuwe_lijst = []  # Tijdelijk
@@ -84,22 +82,3 @@ def backk(gok, antwoord,pogingen):
     nieuwe_feedback = feedback(gok, antwoord)
     print('Gok {}: {} -- Feedback: {}'.format(pogingen, gok, nieuwe_feedback))
     return(nieuwe_feedback)
-
-
-
-def test():  #Test de gemiddelde snelheid
-    pogingen = 1 # Verander deze om de gemiddelde snelheid te berekenen voor een bepaald aantal keer
-    keer = 0
-    totaal = 0
-    maxi = []
-    lst = gen()
-    while keer != pogingen:
-        ans, tijd = heuristiek(random.choice(lst)) #random.choice(lst)
-        maxi.append(tijd)
-        keer += 1
-        totaal += tijd
-    print()
-    print('gem:',totaal/keer)
-    print('max:', max(maxi))
-
-#test()

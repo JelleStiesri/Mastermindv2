@@ -15,34 +15,32 @@ import random
         YET ANOTHER MASTERMIND STRATEGY, Barteld Kooi, Universiteit van Groningen (algoritme 2.1)
         (Concept komt dan de paper, De code van mezelf)     
 """
-
 def algoritme(antwoord):
     combi_lijst = gen() #Deze functie staat apart zodat het testen sneller kan gaan (Anders moet gen steeds opnieuw)
-    oplossing, tijd =algoritme_uitvoering(antwoord,combi_lijst)
-    return oplossing, tijd
+    algoritme_uitvoering(antwoord,combi_lijst)
+
 
 def algoritme_uitvoering(antwoord,combi_lijst):
-    tijd = 1
+    pogingen = 1
     gok = [1,1,2,3]  #Eerste gok, bewezen de snelste
     nieuwe_feedback = feedback(gok, antwoord) #Eerste feedback
     if nieuwe_feedback == (4, 0):
         print('Geraden in 1 zet! - Antwoord = ', gok, '\n')
-        return gok, tijd
+        return gok, pogingen
     print('Gok 1: {} -- Feedback: {}'.format(gok,nieuwe_feedback))
 
-    while len(combi_lijst) != 1:
-        tijd += 1
+    while pogingen != 10:
+        pogingen += 1
         combi_lijst = vergelijken(combi_lijst, gok, nieuwe_feedback)
         gok = aanroep_best(combi_lijst) #Voor algoritme 'beste gok'
         nieuwe_feedback = feedback(gok,antwoord)
-        print('Gok {}: {} -- Feedback: {}'.format(tijd, gok, nieuwe_feedback))
+        print('Gok {}: {} -- Feedback: {}'.format(pogingen, gok, nieuwe_feedback))
         if nieuwe_feedback == (4,0):
-            print('Aantal zetten', tijd, '---', 'Antwoord =', gok,'\n')
-            return gok, tijd
+            print('Aantal zetten', pogingen, '---', 'Antwoord =', gok,'\n')
 
-    oplossing = combi_lijst[0]
-    print('Aantal zetten', tijd, '---', 'Antwoord =', combi_lijst[0],'\n')
-    return oplossing, tijd
+
+    print('De computer heeft verloren!','\n')
+
 
 def vergelijken(combi_lijst, gok, oude_feedback):
     nieuwe_lijst = [] #Tijdelijk
@@ -52,20 +50,3 @@ def vergelijken(combi_lijst, gok, oude_feedback):
             nieuwe_lijst.append(combinatie)
     combi_lijst = nieuwe_lijst
     return combi_lijst
-
-def test():  #Test de gemiddelde snelheid
-    pogingen = 1500  # Verander deze om de gemiddelde snelheid te berekenen voor een bepaald aantal keer
-    keer = 0
-    totaal = 0
-    maxi = []
-    lst = gen()
-    while keer != pogingen:
-        ans, tijd = algoritme_uitvoering(random.choice(lst),lst) #random.choice(lst)
-        maxi.append(tijd)
-        keer += 1
-        totaal += tijd
-        print(keer)
-    print('gem',totaal/keer)
-    print('max:', max(maxi))
-
-#test()
