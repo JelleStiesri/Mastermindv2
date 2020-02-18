@@ -8,12 +8,13 @@ import random
         Als basis heb ik het simpelste algoritme gebruikt. Ik heb deze uitgebreid -
         - door een 2e algoritme toe te voegen (degene die de beste volgende gok kiest)
         Het 2e algoritme komt van het principe 'minimax' of het algoritme van 'Donald Knuth'
+        
+        Gebruikte andere functies: beste_gok, feedback, generate
 """
 """Bronnen:
         YET ANOTHER MASTERMIND STRATEGY, Barteld Kooi, Universiteit van Groningen (algoritme 2.1)
         (Concept komt dan de paper, De code van mezelf)     
 """
-
 
 def algoritme(antwoord):
     combi_lijst = gen() #Deze functie staat apart zodat het testen sneller kan gaan (Anders moet gen steeds opnieuw)
@@ -43,7 +44,6 @@ def algoritme_uitvoering(antwoord,combi_lijst):
     print('Aantal zetten', tijd, '---', 'Antwoord =', combi_lijst[0],'\n')
     return oplossing, tijd
 
-
 def vergelijken(combi_lijst, gok, oude_feedback):
     nieuwe_lijst = [] #Tijdelijk
     for combinatie in combi_lijst:
@@ -52,8 +52,6 @@ def vergelijken(combi_lijst, gok, oude_feedback):
             nieuwe_lijst.append(combinatie)
     combi_lijst = nieuwe_lijst
     return combi_lijst
-
-
 
 def test():  #Test de gemiddelde snelheid
     pogingen = 1500  # Verander deze om de gemiddelde snelheid te berekenen voor een bepaald aantal keer
@@ -70,4 +68,4 @@ def test():  #Test de gemiddelde snelheid
     print('gem',totaal/keer)
     print('max:', max(maxi))
 
-test()
+#test()

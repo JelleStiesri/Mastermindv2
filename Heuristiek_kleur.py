@@ -6,22 +6,18 @@ from Feedback import feedback
     De hoeveelheid totale pinnetjes die erbij komen (ten opzichte van eerste feedback) staat gelijk aan het aantal 2en in de code. 
     Dit doe ik tot en met 6 zodat je weet welke kleuren erin zitten
 """
-
-
-
 def kleur(antwoord):
     print('Antwoord:',antwoord)
     pogingen = 0
     gok = [1,1,1,1] #eerste gok
-
-    f1 = feedback(gok,antwoord)
+    feedback1 = feedback(gok,antwoord)
     zwart, wit = feedback(gok,antwoord)
     pogingen += 1
-    print("{}e feedback:".format(pogingen),f1, gok)
+    print('Gok {}: {} -- Feedback: {}'.format(pogingen, gok, feedback1))
 
-    if f1 == (4,0):
+    if feedback1 == (4,0):
         print('in 1 keer')
-        return gok, f1, pogingen
+        return gok, feedback1, pogingen
 
     totaal_feedback1 = zwart + wit
     aantal1 = totaal_feedback1
@@ -134,10 +130,9 @@ def kleur(antwoord):
     else:
         return('ERROR')
 
-
 def backk(gok, antwoord,pogingen):
-    back = feedback(gok, antwoord)
-    print("{}e feedback:".format(pogingen), back, gok)
-    return(back)
+    nieuwe_feedback = feedback(gok, antwoord)
+    print('Gok {}: {} -- Feedback: {}'.format(pogingen, gok, nieuwe_feedback))
+    return(nieuwe_feedback)
 
 #kleur([1,2,3,4])

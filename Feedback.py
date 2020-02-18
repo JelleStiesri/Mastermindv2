@@ -25,4 +25,3 @@ def wit_feedback(gok, antwoord):
     return wit
 
 #print(feedback([1, 7, 3, 2], [3, 7, 2, 3])) #Om te testen
-

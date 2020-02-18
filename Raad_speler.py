@@ -1,9 +1,10 @@
 from Feedback import feedback
-"""Functie die de speler de code laat gokken"""
+"""Functie die de speler de code laat gokken
+    Gebruikte andere functies: feedback """
 
 def spelerraad(antwoord):
-    print(antwoord) #Weghalen tijdens oplevering
-    max_pogingen = 8
+    #print(antwoord) #Haal de '#' weg als je wil testen maar geen zin hebt om daadwerkelijk te spelen
+    max_pogingen = 10
     aantal_pogingen = 0 #aantal pogingen dat de speler heeft gedaan
     ans = False
     gok = 0
@@ -12,7 +13,6 @@ def spelerraad(antwoord):
         gok = gok_code(aantal_pogingen)
         zwart, wit = feedback(gok,antwoord)
         print('Zwart: {} - Wit: {}'.format(zwart,wit),'\n')
-
     if gok == antwoord:
         print('Je hebt gewonnen!')
         print('Aantal zetten: ', aantal_pogingen, ' - ', 'Antwoord: ', *gok,sep='')
@@ -39,5 +39,3 @@ def gok_code(poging):
             continue
         else:
             return gok
-
-

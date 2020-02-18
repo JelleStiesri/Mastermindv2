@@ -15,6 +15,5 @@ def gen(): # Maakt een lijst met alle mogelijke combinaties van de cijfers 1/6 e
             lijst.append(combinatie)
         if len(lijst) == 1296: #aantal mogelijke combinaties
             break
-    lijst.sort(key=lambda x: x[0]) #sorteert alleen op eerste karakter in lijst, verder is niet nodig
+    lijst.sort(key=lambda x: x[0]) #sorteert alleen op eerste karakter in lijst, verder sorteren is niet nodig
     return(lijst)
-
