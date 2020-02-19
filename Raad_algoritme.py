@@ -1,7 +1,6 @@
 from Feedback import feedback
 from generate import gen
 from beste_gok import aanroep_best
-import random
 """"
             INFO
         Dit algoritme is gebaseert op de paper van de Uni van groningen.
@@ -37,6 +36,7 @@ def algoritme_uitvoering(antwoord,combi_lijst):
         print('Gok {}: {} -- Feedback: {}'.format(pogingen, gok, nieuwe_feedback))
         if nieuwe_feedback == (4,0):
             print('Aantal zetten', pogingen, '---', 'Antwoord =', gok,'\n')
+            return gok
 
 
     print('De computer heeft verloren!','\n')

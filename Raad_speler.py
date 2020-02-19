@@ -3,7 +3,7 @@ from Feedback import feedback
     Gebruikte andere functies: feedback """
 
 def spelerraad(antwoord):
-    #print(antwoord) #Haal de '#' weg als je wil testen maar geen zin hebt om daadwerkelijk te spelen
+    print(antwoord) #Haal de '#' weg als je wil testen maar geen zin hebt om daadwerkelijk te spelen
     max_pogingen = 10
     aantal_pogingen = 0 #aantal pogingen dat de speler heeft gedaan
     ans = False
